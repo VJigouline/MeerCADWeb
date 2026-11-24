@@ -1,0 +1,86 @@
+<section class="hero" id="scene-editor" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Open source · Runs in your browser</p>
+      <h1 id="hero-title">SceneEditor</h1>
+      <p class="lead">{{ sceneEditor.summary }}</p>
+      <div class="actions">
+        <a class="button primary" [href]="sceneEditor.app">Open SceneEditor</a>
+        <a class="button" [href]="sceneEditor.guide">User guide</a>
+        <a class="button" [href]="sceneEditor.repository">GitHub</a>
+      </div>
+      <p class="note">
+        No installation or sign-in. Models you open stay in your browser.
+        <a [href]="sceneEditor.readme">Read the README</a> for the details.
+      </p>
+    </div>
+    <a class="hero-shot" [href]="sceneEditor.app" aria-label="Open SceneEditor">
+      <img
+        src="images/scene-editor.jpg"
+        width="1331"
+        height="793"
+        alt="SceneEditor showing a model of the Ingenuity Mars helicopter, with the materials library panel open beside it"
+        fetchpriority="high"
+      />
+    </a>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="features-title">
+  <div class="container">
+    <h2 id="features-title" class="visually-hidden">What SceneEditor does</h2>
+    <ul class="features">
+      @for (feature of sceneEditor.features; track feature.title) {
+        <li>
+          <h3>{{ feature.title }}</h3>
+          <p>{{ feature.text }}</p>
+        </li>
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="libraries" aria-labelledby="engine-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="engine-title">Inside SceneEditor</h2>
+      <p>
+        SceneEditor opens STEP and IFC files and renders photorealistic images with these
+        libraries. Each is a standalone TypeScript package you can use in your own three.js
+        application.
+      </p>
+    </header>
+    <div class="grid">
+      @for (project of sceneEditorLibraries; track project.name) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section" id="geometry" aria-labelledby="geometry-title">
+  <div class="container">
+    <header class="section-head">
+      <h2 id="geometry-title">CAD geometry</h2>
+      <p>
+        Curves, surfaces and solids for CAD in TypeScript. Each library is built on the one
+        before it, and all share the same vector, frame and transform types.
+      </p>
+    </header>
+    <ol class="stack" aria-label="Library layers">
+      @for (project of geometryLibraries; track project.name; let last = $last) {
+        <li>
+          <span class="mono">{{ project.name }}</span>
+          @if (!last) {
+            <span class="arrow" aria-hidden="true">→</span>
+          }
+        </li>
+      }
+    </ol>
+    <div class="grid">
+      @for (project of geometryLibraries; track project.name) {
+        <app-project-card [project]="project" />
+      }
+    </div>
+  </div>
+</section>
