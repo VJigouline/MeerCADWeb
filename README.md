@@ -1,6 +1,6 @@
 # MeerCADWeb
 
-The [www.meercad.com](https://www.meercad.com) site. Its home page presents [SceneEditor](https://github.com/VJigouline/SceneEditor) and the MeerCAD libraries, with links to their live pages, documentation and code:
+The MeerCAD site, at [vjigouline.github.io/MeerCADWeb](https://vjigouline.github.io/MeerCADWeb/). Its home page presents [SceneEditor](https://github.com/VJigouline/SceneEditor) and the MeerCAD libraries, with links to their live pages, documentation and code:
 
 - SceneEditor libraries: [mc-step-import](https://github.com/VJigouline/mc-step-import), [mc-ifc-import](https://github.com/VJigouline/mc-ifc-import) and [mc-raytracer](https://github.com/VJigouline/mc-raytracer)
 - CAD geometry libraries: [mc-curves](https://github.com/VJigouline/mc-curves), [mc-surfaces](https://github.com/VJigouline/mc-surfaces) and [mc-solids](https://github.com/VJigouline/mc-solids)
@@ -26,4 +26,11 @@ The projects, their descriptions and links are in [`src/app/projects.ts`](src/ap
 
 Every push to `main` tests and builds the site and deploys it to GitHub Pages, with the [Deploy to GitHub Pages](.github/workflows/deploy-pages.yml) workflow. To redeploy without a push, run the workflow from the repository's Actions tab.
 
-GitHub Pages serves the site at www.meercad.com, the domain in [`public/CNAME`](public/CNAME). At the DNS provider, `www.meercad.com` is a CNAME record pointing to `vjigouline.github.io`.
+GitHub Pages serves the site at https://vjigouline.github.io/MeerCADWeb/, so the workflow builds it with `--base-href /MeerCADWeb/`.
+
+To serve it at www.meercad.com instead:
+
+1. At the DNS provider, make `www.meercad.com` a CNAME record pointing to `vjigouline.github.io`.
+2. In the workflow, build with `npx ng build` (base href `/`), and add a `public/CNAME` file containing `www.meercad.com`.
+3. In the repository's Settings → Pages, set the custom domain to `www.meercad.com`, and enforce HTTPS once GitHub has issued the certificate.
+4. Change the `https://vjigouline.github.io/MeerCADWeb/` addresses in [`src/index.html`](src/index.html) to `https://www.meercad.com/`.
