@@ -38,7 +38,7 @@ export const sceneEditor = {
   features: [
     {
       title: 'Opens CAD, BIM and 3D files',
-      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), DXF, Blender and Ogre. Drop files on the view or open them from the Scene tab.',
+      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), IGES, Rhino 3DM, DXF, Blender, FBX, OBJ, 3DS, PLY, 3MF, SVG, USD, USDZ, CityJSON and Ogre. Drop files on the view or open them from the Scene tab.',
     },
     {
       title: 'Edits lights and materials',
@@ -111,6 +111,116 @@ export const sceneEditorLibraries: Project[] = [
     documentation: docs('mc-ogre-import'),
     gettingStarted: doc('mc-ogre-import', 'GettingStarted.md'),
     links: [{ label: 'In SceneEditor', url: doc('mc-ogre-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-iges-import',
+    summary:
+      'Reads IGES CAD files into three.js. Tessellates trimmed NURBS and analytic surfaces and B-rep solids, with free curves, colours, levels and units.',
+    tags: ['IGES 5.3', 'Trimmed surfaces', 'B-rep', 'NURBS'],
+    repository: `${github}/mc-iges-import`,
+    documentation: docs('mc-iges-import'),
+    gettingStarted: doc('mc-iges-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-iges-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-3dm-import',
+    summary:
+      'Reads Rhino .3dm files into three.js with rhino3dm: meshes, Breps, extrusions, SubDs, curves and block instances, by layer, with materials and units.',
+    tags: ['Rhino 5–8', 'SubD', 'Blocks', 'Layers'],
+    repository: `${github}/mc-3dm-import`,
+    documentation: docs('mc-3dm-import'),
+    gettingStarted: doc('mc-3dm-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-3dm-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-obj-import',
+    summary:
+      'Reads Wavefront OBJ models into three.js with their MTL material libraries and textures, loose or zipped.',
+    tags: ['.obj', '.mtl', 'Textures'],
+    repository: `${github}/mc-obj-import`,
+    documentation: docs('mc-obj-import'),
+    gettingStarted: doc('mc-obj-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-obj-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-fbx-import',
+    summary:
+      'Reads binary and ASCII FBX files into three.js: meshes, materials, embedded or external textures, skinning, morphs and animations, in metres.',
+    tags: ['FBX 7.x', 'Animations', 'Skinning'],
+    repository: `${github}/mc-fbx-import`,
+    documentation: docs('mc-fbx-import'),
+    gettingStarted: doc('mc-fbx-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-fbx-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-3mf-import',
+    summary:
+      'Reads 3D Manufacturing Format packages into three.js: objects, components, build items, colours and textures, in their units.',
+    tags: ['3D printing', 'Colours', 'Build items'],
+    repository: `${github}/mc-3mf-import`,
+    documentation: docs('mc-3mf-import'),
+    gettingStarted: doc('mc-3mf-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-3mf-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-ply-import',
+    summary:
+      'Reads Stanford PLY files, ASCII or binary, into three.js as meshes or point clouds, with normals, colours and texture coordinates.',
+    tags: ['ASCII', 'Binary', 'Point clouds'],
+    repository: `${github}/mc-ply-import`,
+    documentation: docs('mc-ply-import'),
+    gettingStarted: doc('mc-ply-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-ply-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-3ds-import',
+    summary:
+      'Reads Autodesk 3D Studio .3ds files into three.js with their meshes, materials and textures.',
+    tags: ['.3ds', 'Textures'],
+    repository: `${github}/mc-3ds-import`,
+    documentation: docs('mc-3ds-import'),
+    gettingStarted: doc('mc-3ds-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-3ds-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-svg-import',
+    summary:
+      'Turns SVG drawings into flat three.js shapes: filled areas and stroked outlines, in their colours, the right way up.',
+    tags: ['Fills', 'Strokes', 'CSS styles'],
+    repository: `${github}/mc-svg-import`,
+    documentation: docs('mc-svg-import'),
+    gettingStarted: doc('mc-svg-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-svg-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-usd-import',
+    summary:
+      'Reads Universal Scene Description stages, text or binary crate, into three.js with their referenced layers, preview materials and textures.',
+    tags: ['USDA', 'USDC', 'Variants'],
+    repository: `${github}/mc-usd-import`,
+    documentation: docs('mc-usd-import'),
+    gettingStarted: doc('mc-usd-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-usd-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-usdz-import',
+    summary:
+      'Reads USDZ packages, the zipped USD of AR Quick Look, into three.js, checking them against the USDZ specification.',
+    tags: ['USDZ', 'AR Quick Look'],
+    repository: `${github}/mc-usdz-import`,
+    documentation: docs('mc-usdz-import'),
+    gettingStarted: doc('mc-usdz-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-usdz-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-cityjson-import',
+    summary:
+      'Reads CityJSON and CityJSONSeq 3D city models into three.js: city objects with semantic surfaces, levels of detail, materials and attributes.',
+    tags: ['CityJSON 1.0–2.0', 'LoD', 'Semantics'],
+    repository: `${github}/mc-cityjson-import`,
+    documentation: docs('mc-cityjson-import'),
+    gettingStarted: doc('mc-cityjson-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-cityjson-import', 'SceneEditor.md') }],
   },
   {
     name: 'mc-raytracer',
