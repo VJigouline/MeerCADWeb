@@ -38,7 +38,7 @@ export const sceneEditor = {
   features: [
     {
       title: 'Opens CAD, BIM and 3D files',
-      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), Blender and Ogre. Drop files on the view or open them from the Scene tab.',
+      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), DXF, Blender and Ogre. Drop files on the view or open them from the Scene tab.',
     },
     {
       title: 'Edits lights and materials',
@@ -78,6 +78,17 @@ export const sceneEditorLibraries: Project[] = [
     documentation: docs('mc-ifc-import'),
     gettingStarted: doc('mc-ifc-import', 'GettingStarted.md'),
     links: [{ label: 'In SceneEditor', url: doc('mc-ifc-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-dxf-import',
+    summary:
+      'Reads AutoCAD DXF drawings, ASCII or binary, into three.js. Lines, curves, hatches, 3D faces ' +
+      'and meshes in their layers and colours, with blocks expanded where they are inserted.',
+    tags: ['DXF R12–2018', 'Blocks', 'Hatches', 'Binary DXF'],
+    repository: `${github}/mc-dxf-import`,
+    documentation: docs('mc-dxf-import'),
+    gettingStarted: doc('mc-dxf-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-dxf-import', 'SceneEditor.md') }],
   },
   {
     name: 'mc-blender-import',
