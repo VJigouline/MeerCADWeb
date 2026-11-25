@@ -38,7 +38,7 @@ export const sceneEditor = {
   features: [
     {
       title: 'Opens CAD, BIM and 3D files',
-      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242) and IFC (IFC2X3 and the IFC4 line). Drop files on the view or open them from the Scene tab.',
+      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line) and Ogre. Drop files on the view or open them from the Scene tab.',
     },
     {
       title: 'Edits lights and materials',
@@ -78,6 +78,17 @@ export const sceneEditorLibraries: Project[] = [
     documentation: docs('mc-ifc-import'),
     gettingStarted: doc('mc-ifc-import', 'GettingStarted.md'),
     links: [{ label: 'In SceneEditor', url: doc('mc-ifc-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-ogre-import',
+    summary:
+      'Reads Ogre 3D resources into three.js: binary and XML meshes, material scripts and dotScene ' +
+      'scenes, loose or zipped. Builds meshes, materials, textures, lights and cameras.',
+    tags: ['.mesh', '.material', 'dotScene', 'Zip'],
+    repository: `${github}/mc-ogre-import`,
+    documentation: docs('mc-ogre-import'),
+    gettingStarted: doc('mc-ogre-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-ogre-import', 'SceneEditor.md') }],
   },
   {
     name: 'mc-raytracer',

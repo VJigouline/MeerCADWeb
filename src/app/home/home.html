@@ -45,12 +45,12 @@
     <header class="section-head">
       <h2 id="engine-title">Inside SceneEditor</h2>
       <p>
-        SceneEditor opens STEP and IFC files and renders photorealistic images with these
+        SceneEditor opens STEP, IFC and Ogre files and renders photorealistic images with these
         libraries. Each is a standalone TypeScript package you can use in your own three.js
         application.
       </p>
     </header>
-    <div class="grid">
+    <div class="grid four">
       @for (project of sceneEditorLibraries; track project.name) {
         <app-project-card [project]="project" />
       }

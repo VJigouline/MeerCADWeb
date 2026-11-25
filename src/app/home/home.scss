@@ -148,6 +148,17 @@ h1 {
   gap: 1.25rem;
 }
 
+// For a section of four cards.
+.grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1150px) {
+  .grid.four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .stack {
   display: flex;
   flex-wrap: wrap;
@@ -187,7 +198,8 @@ h1 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .grid {
+  .grid,
+  .grid.four {
     grid-template-columns: minmax(0, 1fr);
   }
 }
