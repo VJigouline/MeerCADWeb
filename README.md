@@ -2,7 +2,7 @@
 
 The MeerCAD site, at [vjigouline.github.io/MeerCADWeb](https://vjigouline.github.io/MeerCADWeb/). Its home page presents [SceneEditor](https://github.com/VJigouline/SceneEditor) and the MeerCAD libraries, with links to their live pages, documentation and code:
 
-- SceneEditor libraries: [mc-step-import](https://github.com/VJigouline/mc-step-import), [mc-ifc-import](https://github.com/VJigouline/mc-ifc-import), [mc-ogre-import](https://github.com/VJigouline/mc-ogre-import) and [mc-raytracer](https://github.com/VJigouline/mc-raytracer)
+- SceneEditor libraries: [mc-step-import](https://github.com/VJigouline/mc-step-import), [mc-ifc-import](https://github.com/VJigouline/mc-ifc-import), [mc-blender-import](https://github.com/VJigouline/mc-blender-import), [mc-ogre-import](https://github.com/VJigouline/mc-ogre-import) and [mc-raytracer](https://github.com/VJigouline/mc-raytracer)
 - CAD geometry libraries: [mc-curves](https://github.com/VJigouline/mc-curves), [mc-surfaces](https://github.com/VJigouline/mc-surfaces) and [mc-solids](https://github.com/VJigouline/mc-solids)
 
 It's an Angular 22 application prerendered to static HTML, so the page shows without JavaScript and needs no server.

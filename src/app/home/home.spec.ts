@@ -22,6 +22,7 @@ describe('Home', () => {
     const names = [
       'mc-step-import',
       'mc-ifc-import',
+      'mc-blender-import',
       'mc-ogre-import',
       'mc-raytracer',
       'mc-curves',
