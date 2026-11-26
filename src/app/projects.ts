@@ -38,7 +38,7 @@ export const sceneEditor = {
   features: [
     {
       title: 'Opens CAD, BIM and 3D files',
-      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), IGES, Rhino 3DM, DXF, Blender, FBX, OBJ, 3DS, PLY, 3MF, SVG, USD, USDZ, CityJSON and Ogre. Drop files on the view or open them from the Scene tab.',
+      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), IGES, Rhino 3DM, DXF, Blender, FBX, OBJ, 3DS, PLY, 3MF, SVG, USD, USDZ, CityJSON, VRML, X3D, AMF, OFF, KMZ, Draco, G-code toolpaths, LAS/LAZ, E57, XYZ and PCD point clouds, Ogre, and HDR and EXR environment maps. Drop files on the view or open them from the Scene tab.',
     },
     {
       title: 'Edits lights and materials',
@@ -221,6 +221,136 @@ export const sceneEditorLibraries: Project[] = [
     documentation: docs('mc-cityjson-import'),
     gettingStarted: doc('mc-cityjson-import', 'GettingStarted.md'),
     links: [{ label: 'In SceneEditor', url: doc('mc-cityjson-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-gcode-import',
+    summary:
+      'Draws G-code toolpaths in three.js: CNC programs by tool, with rapids, arcs, helices and drilling cycles, and 3D-printer programs by layer.',
+    tags: ['CNC', '3D printing', 'Arcs', 'Drilling cycles'],
+    repository: `${github}/mc-gcode-import`,
+    documentation: docs('mc-gcode-import'),
+    gettingStarted: doc('mc-gcode-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-gcode-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-vrml-import',
+    summary:
+      'Reads VRML 2.0 (VRML97) worlds, plain or gzipped, into three.js, with their shapes, materials, textures and transforms.',
+    tags: ['VRML97', '.wrl', 'Textures'],
+    repository: `${github}/mc-vrml-import`,
+    documentation: docs('mc-vrml-import'),
+    gettingStarted: doc('mc-vrml-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-vrml-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-x3d-import',
+    summary:
+      'Reads X3D scenes in the XML and classic encodings into three.js, rewriting X3D 4 nodes as their VRML equivalents.',
+    tags: ['X3D 4', 'XML', 'Classic VRML'],
+    repository: `${github}/mc-x3d-import`,
+    documentation: docs('mc-x3d-import'),
+    gettingStarted: doc('mc-x3d-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-x3d-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-hdr-import',
+    summary:
+      'Reads Radiance HDR images as environment maps that light three.js scenes and show behind them.',
+    tags: ['RGBE', 'Image-based lighting'],
+    repository: `${github}/mc-hdr-import`,
+    documentation: docs('mc-hdr-import'),
+    gettingStarted: doc('mc-hdr-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-hdr-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-exr-import',
+    summary:
+      'Reads OpenEXR images, with any compression three.js decodes, as environment maps for image-based lighting.',
+    tags: ['OpenEXR', 'PIZ', 'DWA', 'Image-based lighting'],
+    repository: `${github}/mc-exr-import`,
+    documentation: docs('mc-exr-import'),
+    gettingStarted: doc('mc-exr-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-exr-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-las-import',
+    summary:
+      'Reads LAS and LAZ LiDAR point clouds into three.js, coloured by colour, intensity, classification or height.',
+    tags: ['LAS 1.0–1.4', 'LAZ', 'LiDAR'],
+    repository: `${github}/mc-las-import`,
+    documentation: docs('mc-las-import'),
+    gettingStarted: doc('mc-las-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-las-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-e57-import',
+    summary:
+      'Reads E57 3D scan files into three.js: each scan a point cloud placed by its pose, with colours and intensity.',
+    tags: ['ASTM E57', 'Laser scans', 'Checksums'],
+    repository: `${github}/mc-e57-import`,
+    documentation: docs('mc-e57-import'),
+    gettingStarted: doc('mc-e57-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-e57-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-xyz-import',
+    summary:
+      'Reads text point clouds into three.js, working out the colour, intensity and normal columns.',
+    tags: ['.xyz', '.pts', 'Point clouds'],
+    repository: `${github}/mc-xyz-import`,
+    documentation: docs('mc-xyz-import'),
+    gettingStarted: doc('mc-xyz-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-xyz-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-pcd-import',
+    summary:
+      'Reads Point Cloud Library .pcd files, ASCII, binary or compressed, into three.js point clouds.',
+    tags: ['PCL', 'Point clouds'],
+    repository: `${github}/mc-pcd-import`,
+    documentation: docs('mc-pcd-import'),
+    gettingStarted: doc('mc-pcd-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-pcd-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-amf-import',
+    summary:
+      'Reads Additive Manufacturing Format files, plain or zipped, into three.js, with materials and units.',
+    tags: ['3D printing', 'Zipped AMF'],
+    repository: `${github}/mc-amf-import`,
+    documentation: docs('mc-amf-import'),
+    gettingStarted: doc('mc-amf-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-amf-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-off-import',
+    summary:
+      'Reads Object File Format meshes and their colour, normal and texture variants into three.js.',
+    tags: ['OFF', 'COFF', 'Geomview'],
+    repository: `${github}/mc-off-import`,
+    documentation: docs('mc-off-import'),
+    gettingStarted: doc('mc-off-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-off-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-kmz-import',
+    summary:
+      'Reads Google Earth KMZ archives into three.js: the Collada models their placemarks place, with textures.',
+    tags: ['KML', 'Collada', 'SketchUp'],
+    repository: `${github}/mc-kmz-import`,
+    documentation: docs('mc-kmz-import'),
+    gettingStarted: doc('mc-kmz-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-kmz-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-draco-import',
+    summary:
+      'Decodes Google Draco compressed meshes and point clouds into three.js, in Node or the browser.',
+    tags: ['Draco', 'Compression'],
+    repository: `${github}/mc-draco-import`,
+    documentation: docs('mc-draco-import'),
+    gettingStarted: doc('mc-draco-import', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-draco-import', 'SceneEditor.md') }],
   },
   {
     name: 'mc-raytracer',
