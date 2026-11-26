@@ -49,8 +49,8 @@ export const sceneEditor = {
       text: 'The Photorealistic tab ray traces the scene progressively in Web Workers, with shadows, reflections and global illumination, and saves the image as PNG.',
     },
     {
-      title: 'Exports glTF',
-      text: 'Save the edited scene as glTF to use it in other three.js applications.',
+      title: 'Saves in common formats',
+      text: 'Save the edited scene as glTF or GLB, with Draco compression if wished, OBJ with materials, STL and 3MF for 3D printing, PLY for meshes and point clouds, or USDZ for AR Quick Look.',
     },
   ],
 } as const;
@@ -351,6 +351,66 @@ export const sceneEditorLibraries: Project[] = [
     documentation: docs('mc-draco-import'),
     gettingStarted: doc('mc-draco-import', 'GettingStarted.md'),
     links: [{ label: 'In SceneEditor', url: doc('mc-draco-import', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-gltf-export',
+    summary:
+      'Writes three.js scenes as glTF: binary GLB or text glTF, optionally with Draco mesh compression.',
+    tags: ['GLB', 'Draco', 'KHR_draco_mesh_compression'],
+    repository: `${github}/mc-gltf-export`,
+    documentation: docs('mc-gltf-export'),
+    gettingStarted: doc('mc-gltf-export', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-gltf-export', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-obj-export',
+    summary:
+      'Writes three.js scenes as Wavefront OBJ with MTL materials and PNG textures, in one zip.',
+    tags: ['.obj', '.mtl', 'Textures'],
+    repository: `${github}/mc-obj-export`,
+    documentation: docs('mc-obj-export'),
+    gettingStarted: doc('mc-obj-export', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-obj-export', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-stl-export',
+    summary:
+      'Writes three.js meshes as binary or ASCII STL for 3D printing, in millimetres and Z up.',
+    tags: ['3D printing', 'Binary', 'ASCII'],
+    repository: `${github}/mc-stl-export`,
+    documentation: docs('mc-stl-export'),
+    gettingStarted: doc('mc-stl-export', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-stl-export', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-3mf-export',
+    summary:
+      'Writes three.js meshes as 3MF packages for 3D printing, with colours, units and metadata.',
+    tags: ['3D printing', 'Colours', 'Units'],
+    repository: `${github}/mc-3mf-export`,
+    documentation: docs('mc-3mf-export'),
+    gettingStarted: doc('mc-3mf-export', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-3mf-export', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-ply-export',
+    summary:
+      'Writes three.js meshes and point clouds as PLY, with normals, colours and texture coordinates.',
+    tags: ['Point clouds', 'Binary', 'ASCII'],
+    repository: `${github}/mc-ply-export`,
+    documentation: docs('mc-ply-export'),
+    gettingStarted: doc('mc-ply-export', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-ply-export', 'SceneEditor.md') }],
+  },
+  {
+    name: 'mc-usdz-export',
+    summary:
+      'Writes three.js scenes as USDZ for AR Quick Look, with physically based materials and textures.',
+    tags: ['AR Quick Look', 'UsdPreviewSurface'],
+    repository: `${github}/mc-usdz-export`,
+    documentation: docs('mc-usdz-export'),
+    gettingStarted: doc('mc-usdz-export', 'GettingStarted.md'),
+    links: [{ label: 'In SceneEditor', url: doc('mc-usdz-export', 'SceneEditor.md') }],
   },
   {
     name: 'mc-raytracer',
