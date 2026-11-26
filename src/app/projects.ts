@@ -38,7 +38,7 @@ export const sceneEditor = {
   features: [
     {
       title: 'Opens CAD, BIM and 3D files',
-      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), IGES, Rhino 3DM, DXF, Blender, FBX, OBJ, 3DS, PLY, 3MF, SVG, USD, USDZ, CityJSON, VRML, X3D, AMF, OFF, KMZ, Draco, G-code toolpaths, LAS/LAZ, E57, XYZ and PCD point clouds, Ogre, and HDR and EXR environment maps. Drop files on the view or open them from the Scene tab.',
+      text: 'glTF and GLB, Collada, STL, STEP (AP203, AP214, AP242), IFC (IFC2X3 and the IFC4 line), IGES, Rhino 3DM, DXF, Blender, FBX, OBJ, 3DS, PLY, 3MF, SVG, USD, USDZ, CityJSON, VRML, X3D, AMF, OFF, KMZ, Draco, G-code toolpaths, LAS/LAZ, E57, XYZ and PCD point clouds, Ogre, and HDR and EXR environment maps. Drop files on the view, open them from the Scene tab, or open a model from its web address, with the textures it references; a link with ?url= opens SceneEditor with that model loaded.',
     },
     {
       title: 'Edits lights and materials',
