@@ -28,16 +28,11 @@ Every push to `main` tests and builds the site and deploys it to GitHub Pages, w
 
 GitHub Pages serves the site at https://vjigouline.github.io/MeerCADWeb/, so the workflow builds it with `--base-href /MeerCADWeb/`.
 
-The same push also deploys the site to Azure Static Web Apps, on the Free plan, with the [Deploy to Azure Static Web Apps](.github/workflows/deploy-azure.yml) workflow. Azure serves it at https://white-smoke-0844be003.3.azurestaticapps.net/, from the root, so that workflow builds it with `--base-href /`.
+The same push also deploys the site to Azure Static Web Apps, on the Free plan, with the [Deploy to Azure Static Web Apps](.github/workflows/deploy-azure.yml) workflow. Azure serves it at https://www.meercad.com/ (and at https://white-smoke-0844be003.3.azurestaticapps.net/), from the root, so that workflow builds it with `--base-href /`.
 
 - **Azure resources:** the static web app `meercad-web`, in the resource group `meercad-web-rg`, West Europe.
 - **Deployment token:** the repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN`. To replace it, reset the token in the Azure portal (the app's **Overview → Manage deployment token**) and save the new one as that secret.
 - **Unknown paths:** [`public/staticwebapp.config.json`](public/staticwebapp.config.json) sends them to `index.html`, whose router shows the home page.
 - **Canonical address:** the pages still name the GitHub Pages address as canonical, so search engines index one copy.
 
-To serve it at www.meercad.com instead:
-
-1. At the DNS provider, make `www.meercad.com` a CNAME record pointing to `vjigouline.github.io`.
-2. In the workflow, build with `npx ng build` (base href `/`), and add a `public/CNAME` file containing `www.meercad.com`.
-3. In the repository's Settings → Pages, set the custom domain to `www.meercad.com`, and enforce HTTPS once GitHub has issued the certificate.
-4. Change the `https://vjigouline.github.io/MeerCADWeb/` addresses in [`src/index.html`](src/index.html) to `https://www.meercad.com/`.
+**www.meercad.com** is a custom domain of the Azure static web app. Its DNS, at IONOS, is a CNAME record from `www` to `white-smoke-0844be003.3.azurestaticapps.net`, and Azure issues and renews its HTTPS certificate. To make it the site's main address, change the `https://vjigouline.github.io/MeerCADWeb/` addresses in [`src/index.html`](src/index.html) to `https://www.meercad.com/`.
