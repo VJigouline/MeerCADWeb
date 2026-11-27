@@ -28,7 +28,7 @@ Every push to `main` tests and builds the site and deploys it to GitHub Pages, w
 
 GitHub Pages serves the site at https://vjigouline.github.io/MeerCADWeb/, so the workflow builds it with `--base-href /MeerCADWeb/`.
 
-The same push also deploys the site to Azure Static Web Apps, on the Free plan, with the [Deploy to Azure Static Web Apps](.github/workflows/deploy-azure.yml) workflow. Azure serves it at https://www.meercad.com/ (and at https://white-smoke-0844be003.3.azurestaticapps.net/), from the root, so that workflow builds it with `--base-href /`.
+Azure Static Web Apps, on the Free plan, is deployed only by hand, once a deployment is confirmed: run the [Deploy to Azure Static Web Apps](.github/workflows/deploy-azure.yml) workflow from the Actions tab, or `gh workflow run deploy-azure.yml`. Azure serves it at https://www.meercad.com/ (and at https://white-smoke-0844be003.3.azurestaticapps.net/), from the root, so that workflow builds it with `--base-href /`.
 
 - **Azure resources:** the static web app `meercad-web`, in the resource group `meercad-web-rg`, West Europe.
 - **Deployment token:** the repository secret `AZURE_STATIC_WEB_APPS_API_TOKEN`. To replace it, reset the token in the Azure portal (the app's **Overview → Manage deployment token**) and save the new one as that secret.
