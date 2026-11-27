@@ -31,4 +31,3 @@ jobs:
           action: upload
           app_location: dist/meercad-web/browser
           skip_app_build: true
-          skip_api_build: true
